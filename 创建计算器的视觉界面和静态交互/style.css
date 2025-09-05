@@ -1,0 +1,168 @@
+/* 全局样式重置 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'SF Pro Display', 'Helvetica Neue', Arial, sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f5f5f7;
+}
+
+/* 计算器容器 */
+.calculator {
+    background-color: #1c1c1e;
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    width: 320px;
+    max-width: 100%;
+}
+
+/* 显示屏区域 */
+.display {
+    background-color: #1c1c1e;
+    padding: 20px 10px;
+    text-align: right;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.previous-operand {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 18px;
+    min-height: 24px;
+    margin-bottom: 5px;
+}
+
+.current-operand {
+    color: white;
+    font-size: 36px;
+    font-weight: 300;
+    min-height: 48px;
+    overflow-x: auto;
+}
+
+/* 按钮容器 - 使用CSS Grid布局 */
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+/* 按钮基础样式 */
+.btn {
+    padding: 20px;
+    border: none;
+    border-radius: 50%;
+    font-size: 20px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    outline: none;
+}
+
+/* 数字按钮样式 */
+.number {
+    background-color: #313131;
+    color: white;
+}
+
+.number:hover {
+    background-color: #4a4a4a;
+}
+
+.number:active {
+    background-color: #616161;
+    transform: scale(0.95);
+}
+
+/* 操作符按钮样式 */
+.operator {
+    background-color: #ff9500;
+    color: white;
+    font-weight: 500;
+}
+
+.operator:hover {
+    background-color: #ffad33;
+}
+
+.operator:active {
+    background-color: #ffc266;
+    transform: scale(0.95);
+}
+
+/* 功能按钮样式 */
+.function {
+    background-color: #a5a5a5;
+    color: black;
+    font-weight: 500;
+}
+
+.function:hover {
+    background-color: #c7c7c7;
+}
+
+.function:active {
+    background-color: #e0e0e0;
+    transform: scale(0.95);
+}
+
+/* 等号按钮样式 */
+.equal {
+    background-color: #ff9500;
+    color: white;
+    font-weight: 500;
+}
+
+.equal:hover {
+    background-color: #ffad33;
+}
+
+.equal:active {
+    background-color: #ffc266;
+    transform: scale(0.95);
+}
+
+/* 零号按钮特殊布局 */
+#zero {
+    grid-column: span 2;
+    border-radius: 50px;
+}
+
+/* 响应式设计 */
+@media (max-width: 360px) {
+    .calculator {
+        width: 280px;
+        padding: 15px;
+    }
+    
+    .btn {
+        padding: 18px;
+        font-size: 18px;
+    }
+    
+    .current-operand {
+        font-size: 32px;
+    }
+}
+
+/* 滚动条样式 */
+.current-operand::-webkit-scrollbar {
+    height: 4px;
+}
+
+.current-operand::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 2px;
+}
+
+.current-operand::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 2px;
+}
